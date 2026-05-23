@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeadPredictor Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo-title">
+                <div class="logo"></div>
+                <div class="title">Lead<span class="highlight">Predictor</span></div>
+            </div>
+            <div class="form-group">
+                <label>Language</label>
+                <select><option>🇺🇸 English</option></select>
+            </div>
+            <div class="form-group">
+                <label>Currency</label>
+                <select><option>$ US Dollar</option></select>
+            </div>
+            <div class="form-group">
+                <label>Campaign Start</label>
+                <input type="date" value="2026-05-08">
+            </div>
+            <div class="form-group">
+                <label>Campaign End</label>
+                <input type="date" value="2026-11-04">
+            </div>
+            <div class="form-group">
+                <label>Total Revenue</label>
+                <input type="number" id="revenue" value="10000">
+            </div>
+            <div class="form-group">
+                <label>Avg. Order Value</label>
+                <input type="number" id="aov" value="1000">
+            </div>
+        </aside>
+        <main class="main-content">
+            <section class="chart-section">
+                <div class="chart-panel">
+                    <div class="chart-body" id="chartArea">
+                        <div class="y-axis">
+                            <span>6</span>
+                            <span>5</span>
+                            <span>4</span>
+                            <span>3</span>
+                            <span>2</span>
+                            <span>1</span>
+                        </div>
+                        <div class="chart-grid" id="gridLines"></div>
+                        <div class="bars-container" id="barsContainer"></div>
+                    </div>
+                    <div class="x-axis" id="xAxis"></div>
+                </div>
+                <div class="stats">
+                    <div class="stat-card stat-prospects">
+                        <div class="stat-card-header">
+                            <span class="stat-icon">&#128188;</span>
+                            <span>Prospects</span>
+                            <span id="perc-prospects">100%</span>
+                        </div>
+                        <div class="stat-card-value" id="val-prospects">125</div>
+                        <div class="stat-card-bar"><div class="stat-card-fill" id="fill-prospects"></div></div>
+                    </div>
+                    <div class="stat-card stat-leads">
+                        <div class="stat-card-header">
+                            <span class="stat-icon">&#128100;</span>
+                            <span>Leads</span>
+                            <span id="perc-leads">20%</span>
+                        </div>
+                        <div class="stat-card-value" id="val-leads">25</div>
+                        <div class="stat-card-bar"><div class="stat-card-fill" id="fill-leads"></div></div>
+                    </div>
+                    <div class="stat-card stat-customers">
+                        <div class="stat-card-header">
+                            <span class="stat-icon">&#127942;</span>
+                            <span>Customers</span>
+                            <span id="perc-customers">8%</span>
+                        </div>
+                        <div class="stat-card-value" id="val-customers">10</div>
+                        <div class="stat-card-bar"><div class="stat-card-fill" id="fill-customers"></div></div>
+                    </div>
+                </div>
+            </section>
+            <section class="sliders-section">
+                <div class="slider-group">
+                    <label for="leadRate">Lead Response Rate</label>
+                    <input type="range" id="leadRate" min="1" max="100" value="40" step="0.1">
+                    <span id="lbl-leadRate">40.00%</span>
+                </div>
+                <div class="slider-group">
+                    <label for="prospectRate">Prospect Response Rate</label>
+                    <input type="range" id="prospectRate" min="1" max="100" value="20" step="0.1">
+                    <span id="lbl-prospectRate">20.00%</span>
+                </div>
+            </section>
+        </main>
+    </div>
+    <div class="tooltip" id="tooltip"></div>
+    <script src="script.js"></script>
+</body>
+</html>
