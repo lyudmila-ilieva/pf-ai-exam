@@ -66,16 +66,15 @@ function renderChart(prospects, leads, customers) {
     xAxis.innerHTML = '';
     gridLines.innerHTML = '';
 
-    const targetMax = Math.max(prospects, 120);
-    const step = Math.max(20, Math.ceil(targetMax / 6 / 20) * 20);
-    const total = step * 6;
-
-    for (let i = 0; i <= 6; i++) {
-        const value = i * step;
+    // Always use 0,20,40,60,80,100,120 for x-axis
+    const xMarkers = [0, 20, 40, 60, 80, 100, 120];
+    const total = 120;
+    for (let i = 0; i < xMarkers.length; i++) {
+        const value = xMarkers[i];
         const marker = document.createElement('span');
         marker.textContent = `${value} people`;
         xAxis.appendChild(marker);
-        if (i < 6) {
+        if (i < xMarkers.length - 1) {
             const gridLine = document.createElement('div');
             gridLine.className = 'grid-line';
             gridLines.appendChild(gridLine);
