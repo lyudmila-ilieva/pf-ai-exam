@@ -14,27 +14,33 @@
                 <div class="title">Lead<span class="highlight">Predictor</span></div>
             </div>
             <div class="form-group">
-                <label>Language</label>
-                <select><option>🇺🇸 English</option></select>
+                <label data-label-key="Language">Language</label>
+                <select id="languageSelect">
+                    <option value="en">🇺🇸 English</option>
+                    <option value="bg">🇧🇬 Български</option>
+                </select>
             </div>
             <div class="form-group">
-                <label>Currency</label>
-                <select><option>$ US Dollar</option></select>
+                <label data-label-key="Currency">Currency</label>
+                <select id="currencySelect">
+                    <option value="usd">$ US Dollar</option>
+                    <option value="eur">€ Euro</option>
+                </select>
             </div>
             <div class="form-group">
-                <label>Campaign Start</label>
+                <label data-label-key="Campaign Start">Campaign Start</label>
                 <input type="date" value="2026-05-08">
             </div>
             <div class="form-group">
-                <label>Campaign End</label>
+                <label data-label-key="Campaign End">Campaign End</label>
                 <input type="date" value="2026-11-04">
             </div>
             <div class="form-group">
-                <label>Total Revenue</label>
+                <label data-label-key="Total Revenue">Total Revenue</label>
                 <input type="number" id="revenue" value="10000">
             </div>
             <div class="form-group">
-                <label>Avg. Order Value</label>
+                <label data-label-key="Avg. Order Value">Avg. Order Value</label>
                 <input type="number" id="aov" value="1000">
             </div>
         </aside>
@@ -89,12 +95,12 @@
             </section>
             <section class="sliders-section">
                 <div class="slider-group">
-                    <label for="leadRate">Lead Response Rate</label>
+                    <label for="leadRate" data-label-key="Lead Response Rate">Lead Response Rate</label>
                     <input type="range" id="leadRate" min="1" max="100" value="40" step="0.1">
                     <span id="lbl-leadRate">40.00%</span>
                 </div>
                 <div class="slider-group">
-                    <label for="prospectRate">Prospect Response Rate</label>
+                    <label for="prospectRate" data-label-key="Prospect Response Rate">Prospect Response Rate</label>
                     <input type="range" id="prospectRate" min="1" max="100" value="20" step="0.1">
                     <span id="lbl-prospectRate">20.00%</span>
                 </div>
