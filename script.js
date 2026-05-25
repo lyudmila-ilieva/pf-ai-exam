@@ -271,3 +271,28 @@ function renderChart(prospects, leads, customers) {
     input.addEventListener('input', calculateMetrics);
 });
 window.addEventListener('DOMContentLoaded', calculateMetrics);
+
+// --- Настройки за визуалното запълване на плъзгачите (Range Sliders) ---
+document.addEventListener("DOMContentLoaded", function() {
+    const sliders = document.querySelectorAll('input[type="range"]');
+
+    sliders.forEach(slider => {
+        // Функция, която обновява запълването
+        const updateFill = () => {
+            const min = slider.min || 0;
+            const max = slider.max || 100;
+            const value = slider.value;
+            // Изчисляваме процента на запълване
+            const percentage = ((value - min) / (max - min)) * 100;
+            
+            // Подаваме го към CSS
+            slider.style.setProperty('--value', `${percentage}%`);
+        };
+
+        // Извикваме я веднъж при зареждане
+        updateFill();
+
+        // Извикваме я всеки път, когато потребителят мести плъзгача
+        slider.addEventListener('input', updateFill);
+    });
+});

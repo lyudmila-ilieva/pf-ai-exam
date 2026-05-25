@@ -409,9 +409,11 @@ body {
 }
 
 .slider-value {
-    color: var(--text-secondary);
+    color: var(--text-primary);
     font-size: 0.9rem;
-    align-self: flex-end;
+    display: block;
+    width: 100%;
+    text-align: right;
 }
 
 .slider-control-row {
