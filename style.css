@@ -155,7 +155,6 @@ body {
     grid-template-columns: 30px 1fr;
     gap: 12px;
     padding-top: 12px;
-    padding-bottom: 32px; /* Reserve space for x-axis inside chart */
 }
 
 .y-axis {
@@ -297,7 +296,7 @@ body {
 
 .x-axis {
     position: absolute;
-    bottom: 50px;
+    bottom: 40px;
     left: 42px;
     right: 0;
     display: flex;
